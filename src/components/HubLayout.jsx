@@ -24,7 +24,7 @@ export default function HubLayout({children}){
       {/* Desktop sidebar (collapsible) with smooth width transition */}
       <aside className={`hidden md:block ${collapsed ? 'w-[72px]' : 'w-[280px]'} bg-white border-r transition-all duration-300 ease-out`}>
         <div className="h-full sticky top-0">
-          <Sidebar collapsed={collapsed} />
+          <Sidebar collapsed={collapsed} onCollapseToggle={() => setCollapsed(c => !c)} />
         </div>
       </aside>
 

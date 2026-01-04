@@ -7,9 +7,9 @@ export default function App(){
   return (
     <HubLayout>
       <div className="px-8 py-12 max-w-7xl mx-auto">
-        <header className="mb-8">
-          <h1 className="text-4xl font-extrabold text-[#0B63C9]">OrthoNexus Hub</h1>
-          <p className="mt-2 text-gray-500">Your comprehensive orthopedics and trauma knowledge resource.</p>
+        <header className="mb-8 text-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#0B63C9] font-display tracking-tight">OrthoNexus <span className="text-sky-500">Hub</span></h1>
+          <p className="mt-2 text-gray-500 max-w-3xl mx-auto">Your comprehensive orthopedics and trauma knowledge resource.</p>
         </header>
 
         <HubGrid />
