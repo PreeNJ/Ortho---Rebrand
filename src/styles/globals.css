@@ -33,6 +33,10 @@ body {
   animation: fadeIn 200ms ease-out;
 }
 
+/* Sidebar collapse helpers */
+.sidebar-transition { transition: width 300ms ease-out; }
+.sidebar-label { transition: opacity 300ms ease-out, max-width 300ms ease-out; }
+
 html {
   scroll-behavior: smooth;
 }
