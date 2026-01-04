@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,8 +16,12 @@ html, body, #root {
 
 body {
   @apply bg-white text-gray-700 antialiased;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: 'Poppins', Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
+
+/* Display font helper for headings */
+.font-display { font-family: 'Poppins', Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
 
 /* Focus-visible accessibility helpers */
 :where(a,button,input,textarea):focus-visible {
@@ -33,6 +39,37 @@ body {
   animation: fadeIn 200ms ease-out;
 }
 
+/* Sidebar collapse helpers */
+.sidebar-transition { transition: width 300ms ease-out; }
+.sidebar-label { transition: opacity 300ms ease-out, max-width 300ms ease-out; }
+
+/* Responsive search: avoid overlapping with sidebar on narrow screens */
+.topbar-search-container { max-width: 700px; }
+@media (max-width: 768px) {
+  .topbar-search-container {
+    /* make the search shrink if needed and sit inside left/right margins */
+    max-width: calc(100% - 2rem);
+    width: auto;
+    left: 1rem;
+    right: 1rem;
+  }
+  /* move the search down a little to avoid colliding with the top icons */
+  .topbar-search-container {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 480px) {
+  .topbar-search-container {
+    position: fixed; /* ensure it can expand across the available width */
+    top: 3.5rem; /* below the top controls */
+    left: 1rem !important;
+    right: 1rem !important;
+    max-width: calc(100% - 2rem) !important;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: 0.5rem;
+  }
+}
 html {
   scroll-behavior: smooth;
 }

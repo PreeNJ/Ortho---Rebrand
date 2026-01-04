@@ -4,11 +4,12 @@ import Topbar from './Topbar'
 
 export default function HubLayout({children}){
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const [collapsed, setCollapsed] = useState(false)
 
   return (
     <div className="min-h-screen flex bg-gray-50">
-      {/* Topbar (contains global search & menu button) */}
-      <Topbar onMenuClick={() => setDrawerOpen(true)} />
+      {/* Topbar (contains global search, menu button and collapse control) */}
+      <Topbar onMenuClick={() => setDrawerOpen(true)} collapsed={collapsed} onCollapseToggle={() => setCollapsed(c => !c)} />
 
       {/* Overlay drawer for small/medium screens */}
       {drawerOpen && (
@@ -20,10 +21,10 @@ export default function HubLayout({children}){
         </div>
       )}
 
-      {/* Desktop sidebar */}
-      <aside className="hidden md:block w-[280px] bg-white border-r">
+      {/* Desktop sidebar (collapsible) with smooth width transition */}
+      <aside className={`hidden md:block ${collapsed ? 'w-[72px]' : 'w-[280px]'} bg-white border-r transition-all duration-300 ease-out`}>
         <div className="h-full sticky top-0">
-          <Sidebar />
+          <Sidebar collapsed={collapsed} onCollapseToggle={() => setCollapsed(c => !c)} />
         </div>
       </aside>
 

@@ -3,7 +3,7 @@ import React from 'react'
 const updates = [
   'New casting techniques for pediatric fractures',
   'Updated arthritis treatment protocols',
-  'Added 2024 revision papers'
+  'Added 2026 revision papers'
 ]
 
 export default function RecentUpdates(){
