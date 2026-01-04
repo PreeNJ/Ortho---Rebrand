@@ -1,15 +1,14 @@
 import React from 'react'
 import { MdOutlineDashboard } from 'react-icons/md'
-import { FaBone, FaBook, FaSearch } from 'react-icons/fa'
+import { FaBone, FaBook, FaSearch, FaBandAid } from 'react-icons/fa'
 import { GiStethoscope } from 'react-icons/gi'
-import { BiBandage } from 'react-icons/bi'
 
 const items = [
   { key: 'dashboard', label: 'Dashboard', icon: MdOutlineDashboard },
   { key: 'tumors', label: 'Tumors', icon: FaBone },
   { key: 'anatomy', label: 'Anatomy', icon: GiStethoscope },
   { key: 'arthritis', label: 'Arthritis', icon: FaBook },
-  { key: 'casting', label: 'Casting & Splinting', icon: BiBandage },
+    { key: 'casting', label: 'Casting & Splinting', icon: FaBandAid },
   { key: 'revision', label: 'Revision Papers', icon: FaBook },
   { key: 'past', label: 'Past Papers', icon: FaBook },
   { key: 'reference', label: 'Reference Library', icon: FaBook },
