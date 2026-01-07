@@ -1,14 +1,15 @@
 import React from 'react'
 import { MdOutlineDashboard } from 'react-icons/md'
 import { FaBone, FaBook, FaSearch, FaBandAid, FaPills, FaAnchor, FaCogs, FaDna } from 'react-icons/fa'
-import { GiStethoscope, GiSkeleton } from 'react-icons/gi' 
+import { GiStethoscope } from 'react-icons/gi' 
+import KneeIcon from './icons/KneeIcon'
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi'
 
 const items = [
   { key: 'dashboard', label: 'Dashboard', icon: MdOutlineDashboard, color: 'text-sky-500' },
   { key: 'tumors', label: 'Tumors', icon: FaBone, color: 'text-rose-500' },
   { key: 'anatomy', label: 'Anatomy', icon: GiStethoscope, color: 'text-emerald-500' },
-  { key: 'arthritis', label: 'Arthritis', icon: GiSkeleton, color: 'text-amber-500' },
+  { key: 'arthritis', label: 'Arthritis', icon: KneeIcon, color: 'text-amber-500' },
   { key: 'casting', label: 'Casting & Splinting', icon: FaBandAid, color: 'text-slate-500' },
   { key: 'revision', label: 'Biomechanics', icon: FaCogs, color: 'text-sky-500' },
   { key: 'past', label: 'Physiology', icon: FaDna, color: 'text-slate-500' },
