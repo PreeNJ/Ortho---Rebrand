@@ -50,7 +50,9 @@ export default function Sidebar({ onNavigate, collapsed = false, onCollapseToggl
                 aria-current={isActive ? 'page' : undefined}
               >
                 <Icon className={`text-xl transition-transform transition-colors duration-150 ${isActive ? 'text-white' : `${it.color} group-hover:scale-105`}`} />
-                <span className={`font-medium transition-all duration-300 ${collapsed ? 'opacity-0 max-w-0 ml-0 overflow-hidden' : 'opacity-100 ml-3'}`}>{it.label}</span>
+                {!collapsed && (
+                  <span className={`font-medium transition-all duration-300 opacity-100 ml-3`}>{it.label}</span>
+                )}
               </a>
             </li>
           )

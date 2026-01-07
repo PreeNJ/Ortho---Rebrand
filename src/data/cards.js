@@ -1,4 +1,4 @@
-import { FaBone, FaHeart, FaNotesMedical, FaBandAid, FaBook, FaSearch, FaBookOpen, FaPills, FaAnchor, FaCogs } from 'react-icons/fa'
+import { FaBone, FaHeart, FaNotesMedical, FaBandAid, FaBook, FaSearch, FaBookOpen, FaPills, FaAnchor, FaCogs, FaCube } from 'react-icons/fa'
 import { GiStethoscope } from 'react-icons/gi'
 
 export const cards = [
@@ -9,5 +9,6 @@ export const cards = [
   { id: 'physiology', title: 'Physiology', description: 'Musculoskeletal physiology fundamentals', headerBg: '#EEF2FF', icon: FaBookOpen },
   { id: 'traction', title: 'Traction', description: 'Principles and techniques of orthopedic traction', headerBg: '#EAF8F4', icon: FaAnchor },
   { id: 'pharmacology', title: 'Pharmacology', description: 'Drug mechanisms, dosages, and side effects', headerBg: '#F4F6F8', icon: FaPills },
+  { id: 'materials', title: 'Material Science', description: 'Orthopedic biomaterials, properties, and selection', headerBg: '#EDE7FE', icon: FaCube },
   { id: 'biomechanics', title: 'Biomechanics', description: 'Clinical and mechanical principles of movement', headerBg: '#FFF1F3', icon: FaCogs }
 ]
