@@ -1,4 +1,4 @@
-import { FaBone, FaHeart, FaNotesMedical, FaBandAid, FaBook, FaSearch, FaBookOpen } from 'react-icons/fa'
+import { FaBone, FaHeart, FaNotesMedical, FaBandAid, FaBook, FaSearch, FaBookOpen, FaPills, FaAnchor } from 'react-icons/fa'
 import { GiStethoscope } from 'react-icons/gi'
 
 export const cards = [
@@ -8,6 +8,6 @@ export const cards = [
   { id: 'casting', title: 'Casting & Splinting', description: 'Techniques and guidelines for immobilization', headerBg: '#FFF4DB', icon: FaBandAid },
   { id: 'revision', title: 'Revision Papers', description: 'Study materials and key concepts for revision', headerBg: '#FFF1F3', icon: FaBook },
   { id: 'physiology', title: 'Physiology', description: 'Musculoskeletal physiology fundamentals', headerBg: '#EEF2FF', icon: FaBookOpen },
-  { id: 'reference', title: 'Reference Library', description: 'Collection of guidelines, protocols and research papers', headerBg: '#EAF8F4', icon: FaNotesMedical },
-  { id: 'quick', title: 'Quick Search', description: 'Search across all categories and topics', headerBg: '#F4F6F8', icon: FaSearch }
+  { id: 'traction', title: 'Traction', description: 'Principles and techniques of orthopedic traction', headerBg: '#EAF8F4', icon: FaAnchor },
+  { id: 'pharmacology', title: 'Pharmacology', description: 'Drug mechanisms, dosages, and side effects', headerBg: '#F4F6F8', icon: FaPills }
 ]
