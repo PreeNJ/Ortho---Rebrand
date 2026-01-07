@@ -1,19 +1,20 @@
 import React from 'react'
 import { MdOutlineDashboard } from 'react-icons/md'
-import { FaBone, FaBook, FaSearch, FaBandAid } from 'react-icons/fa'
+import { FaBone, FaBook, FaSearch, FaBandAid, FaPills, FaAnchor, FaCogs, FaDna } from 'react-icons/fa'
 import { GiStethoscope } from 'react-icons/gi' 
+import KneeIcon from './icons/KneeIcon'
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi'
 
 const items = [
   { key: 'dashboard', label: 'Dashboard', icon: MdOutlineDashboard, color: 'text-sky-500' },
   { key: 'tumors', label: 'Tumors', icon: FaBone, color: 'text-rose-500' },
   { key: 'anatomy', label: 'Anatomy', icon: GiStethoscope, color: 'text-emerald-500' },
-  { key: 'arthritis', label: 'Arthritis', icon: FaBook, color: 'text-amber-500' },
+  { key: 'arthritis', label: 'Arthritis', icon: KneeIcon, color: 'text-amber-500' },
   { key: 'casting', label: 'Casting & Splinting', icon: FaBandAid, color: 'text-slate-500' },
-  { key: 'revision', label: 'Revision Papers', icon: FaBook, color: 'text-sky-500' },
-  { key: 'past', label: 'Past Papers', icon: FaBook, color: 'text-slate-500' },
-  { key: 'reference', label: 'Reference Library', icon: FaBook, color: 'text-emerald-500' },
-  { key: 'quick', label: 'Quick Search', icon: FaSearch, color: 'text-amber-500' }
+  { key: 'revision', label: 'Biomechanics', icon: FaCogs, color: 'text-sky-500' },
+  { key: 'past', label: 'Physiology', icon: FaDna, color: 'text-slate-500' },
+  { key: 'traction', label: 'Traction', icon: FaAnchor, color: 'text-emerald-500' },
+  { key: 'pharmacology', label: 'Pharmacology', icon: FaPills, color: 'text-amber-500' }
 ]
 
 export default function Sidebar({ onNavigate, collapsed = false, onCollapseToggle }){
@@ -50,14 +51,14 @@ export default function Sidebar({ onNavigate, collapsed = false, onCollapseToggl
                 aria-current={isActive ? 'page' : undefined}
               >
                 <Icon className={`text-xl transition-transform transition-colors duration-150 ${isActive ? 'text-white' : `${it.color} group-hover:scale-105`}`} />
-                <span className={`font-medium transition-all duration-300 ${collapsed ? 'opacity-0 max-w-0 ml-0 overflow-hidden' : 'opacity-100 ml-3'}`}>{it.label}</span>
+                {!collapsed && (
+                  <span className={`font-medium transition-all duration-300 opacity-100 ml-3`}>{it.label}</span>
+                )}
               </a>
             </li>
           )
         })}
       </ul>
-
-      <div className="mt-auto text-sm text-gray-400">© OrthoNexus</div>
     </nav>
   )
 }
