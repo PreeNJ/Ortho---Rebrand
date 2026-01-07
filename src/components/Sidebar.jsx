@@ -11,7 +11,7 @@ const items = [
   { key: 'arthritis', label: 'Arthritis', icon: FaBook, color: 'text-amber-500' },
   { key: 'casting', label: 'Casting & Splinting', icon: FaBandAid, color: 'text-slate-500' },
   { key: 'revision', label: 'Revision Papers', icon: FaBook, color: 'text-sky-500' },
-  { key: 'past', label: 'Past Papers', icon: FaBook, color: 'text-slate-500' },
+  { key: 'past', label: 'Physiology', icon: FaBook, color: 'text-slate-500' },
   { key: 'reference', label: 'Reference Library', icon: FaBook, color: 'text-emerald-500' },
   { key: 'quick', label: 'Quick Search', icon: FaSearch, color: 'text-amber-500' }
 ]
@@ -56,8 +56,6 @@ export default function Sidebar({ onNavigate, collapsed = false, onCollapseToggl
           )
         })}
       </ul>
-
-      <div className="mt-auto text-sm text-gray-400">© OrthoNexus</div>
     </nav>
   )
 }

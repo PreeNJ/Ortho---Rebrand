@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import Sidebar from './Sidebar'
 import Topbar from './Topbar'
+import Footer from './Footer'
 
 export default function HubLayout({children}){
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [collapsed, setCollapsed] = useState(false)
 
   return (
-    <div className="min-h-screen flex bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Topbar (contains global search, menu button and collapse control) */}
       <Topbar onMenuClick={() => setDrawerOpen(true)} collapsed={collapsed} onCollapseToggle={() => setCollapsed(c => !c)} />
 
@@ -21,16 +22,20 @@ export default function HubLayout({children}){
         </div>
       )}
 
-      {/* Desktop sidebar (collapsible) with smooth width transition */}
-      <aside className={`hidden md:block ${collapsed ? 'w-[72px]' : 'w-[280px]'} bg-white border-r transition-all duration-300 ease-out`}>
-        <div className="h-full sticky top-0">
-          <Sidebar collapsed={collapsed} onCollapseToggle={() => setCollapsed(c => !c)} />
-        </div>
-      </aside>
+      <div className="flex flex-1">
+        {/* Desktop sidebar (collapsible) with smooth width transition */}
+        <aside className={`hidden md:block ${collapsed ? 'w-[72px]' : 'w-[280px]'} bg-white border-r transition-all duration-300 ease-out`}>
+          <div className="h-full sticky top-0">
+            <Sidebar collapsed={collapsed} onCollapseToggle={() => setCollapsed(c => !c)} />
+          </div>
+        </aside>
 
-      <main className="flex-1 overflow-auto">
-        {children}
-      </main>
+        <main className="flex-1 overflow-auto">
+          {children}
+        </main>
+      </div>
+
+      <Footer />
     </div>
   )
 }
