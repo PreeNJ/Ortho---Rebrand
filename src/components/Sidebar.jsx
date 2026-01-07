@@ -1,6 +1,6 @@
 import React from 'react'
 import { MdOutlineDashboard } from 'react-icons/md'
-import { FaBone, FaBook, FaSearch, FaBandAid, FaPills, FaAnchor } from 'react-icons/fa'
+import { FaBone, FaBook, FaSearch, FaBandAid, FaPills, FaAnchor, FaCogs } from 'react-icons/fa'
 import { GiStethoscope } from 'react-icons/gi' 
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi'
 
@@ -10,7 +10,7 @@ const items = [
   { key: 'anatomy', label: 'Anatomy', icon: GiStethoscope, color: 'text-emerald-500' },
   { key: 'arthritis', label: 'Arthritis', icon: FaBook, color: 'text-amber-500' },
   { key: 'casting', label: 'Casting & Splinting', icon: FaBandAid, color: 'text-slate-500' },
-  { key: 'revision', label: 'Revision Papers', icon: FaBook, color: 'text-sky-500' },
+  { key: 'revision', label: 'Biomechanics', icon: FaCogs, color: 'text-sky-500' },
   { key: 'past', label: 'Physiology', icon: FaBook, color: 'text-slate-500' },
   { key: 'traction', label: 'Traction', icon: FaAnchor, color: 'text-emerald-500' },
   { key: 'pharmacology', label: 'Pharmacology', icon: FaPills, color: 'text-amber-500' }
