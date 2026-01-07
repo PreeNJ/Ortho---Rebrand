@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Card({ title, description, headerBg, icon: Icon }){
+export default function Card({ title, description, headerBg, icon: Icon, onClick }){
   return (
     <article className="bg-white rounded-lg shadow-sm border flex flex-col justify-between h-full transition-transform duration-150 hover:-translate-y-1 focus-within:shadow-lg">
       <div className={`rounded-t-lg px-6 py-6`} style={{ backgroundColor: headerBg }}>
@@ -16,7 +16,12 @@ export default function Card({ title, description, headerBg, icon: Icon }){
 
       <div className="px-6 py-4">
         <div className="flex justify-center">
-          <button className="px-6 py-2 rounded-full bg-sky-50 border border-sky-200 text-sky-700 font-medium hover:bg-sky-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300">Explore</button>
+          <button 
+            onClick={onClick}
+            className="px-6 py-2 rounded-full bg-sky-50 border border-sky-200 text-sky-700 font-medium hover:bg-sky-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+          >
+            Explore
+          </button>
         </div>
       </div>
     </article>
