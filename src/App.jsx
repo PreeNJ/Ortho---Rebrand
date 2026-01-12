@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HubLayout from './components/HubLayout'
 import HubGrid from './components/HubGrid'
 import RecentUpdates from './components/RecentUpdates'
+import ContentModal from './components/ContentModal'
 
 export default function App(){
+  const [activeCard, setActiveCard] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleCardClick = (cardId, cardTitle) => {
+    setActiveCard({ id: cardId, title: cardTitle })
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setActiveCard(null)
+  }
+
   return (
     <HubLayout>
       <div className="px-8 py-12 max-w-7xl mx-auto">
@@ -12,12 +26,20 @@ export default function App(){
           <p className="mt-2 text-gray-500 max-w-3xl mx-auto">Your comprehensive orthopedics and trauma knowledge resource.</p>
         </header>
 
-        <HubGrid />
+        <HubGrid onCardClick={handleCardClick} />
 
         <div className="mt-10">
           <RecentUpdates />
         </div>
       </div>
+
+      {isModalOpen && activeCard && (
+        <ContentModal
+          title={activeCard.title}
+          cardId={activeCard.id}
+          onClose={handleCloseModal}
+        />
+      )}
     </HubLayout>
   )
 }
